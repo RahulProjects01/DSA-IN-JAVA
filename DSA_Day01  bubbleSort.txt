@@ -1,0 +1,186 @@
+// question :
+// bubble sort: 
+// 1)23 56 8 2 89 1 
+public class Ab {
+    public static void print(int a[]) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void bubbleSort(int a[]) {
+        int n = a.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
+        print(a);
+    }
+
+    public static void main(String[] args) {
+        int a[] = { 23, 56, 8, 2, 89, 1 };
+        bubbleSort(a);
+
+    }
+}
+
+23 56 8 2 89 1 
+23 8 56 2 89 1
+23 8 2 56 89 1 
+23 8 2 56 89 1 
+23 8 2 56 1 89 
+8 23 2 56 1 89 
+8 2 23 56 1 89 
+8 2 23 56 1 89 
+8 2 23 1 56 89 
+2 8 23 1 56 89 
+2 8 23 1 56 89 
+2 8 1 23 56 89 
+2 8 1 23 56 89 
+2 1 8 23 56 89 
+1 2 8 23 56 89 
+1 2 8 23 56 89
+--------------------------------------------------------------
+// 2)5 9 11 67 22 98 7 13  
+// code 
+
+public class Ab {
+    public static void print(int a[]) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void bubblesort(int a[]) {
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int a[] = { 5, 9, 11, 67, 22, 98, 7, 13 };
+        bubblesort(a);
+        print(a);
+    }
+}
+5 9 11 67 22 98 7 13 
+5 9 11 67 22 98 7 13
+5 9 11 67 22 98 7 13
+5 9 11 22 67 98 7 13 
+5 9 11 22 67 98 7 13 
+5 9 11 22 67 7 98 13 
+5 9 11 22 67 7 13 98 
+5 9 11 22 67 7 13 98 
+5 9 11 22 67 7 13 98 
+5 9 11 22 67 7 13 98
+5 9 11 22 67 7 13 98 
+5 9 11 22 7 67 13 98 
+5 9 11 22 7 13 67 98 
+5 9 11 22 7 13 67 98
+5 9 11 22 7 13 67 98 
+5 9 11 22 7 13 67 98 
+5 9 11 7 22 13 67 98 
+5 9 11 7 13 22 67 98 
+5 9 11 7 13 22 67 98 
+5 9 11 7 13 22 67 98 
+5 9 7 11 13 22 67 98 
+5 9 7 11 13 22 67 98 
+5 9 7 11 13 22 67 98 
+5 7 9 11 13 22 67 98 
+5 7 9 11 13 22 67 98 
+5 7 9 11 13 22 67 98
+5 7 9 11 13 22 67 98 
+5 7 9 11 13 22 67 98 
+5 7 9 11 13 22 67 98 
+----------------------------------------------------------------------
+SELECTION SORT --------->
+// 1)23 56 8 2 89 1 
+public class Ab {
+    static void print(int a[]) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    static void selection(int a[]) {
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
+            int min_index = i;
+            for (int j = i + 1; j < n; j++) {
+                if (a[j] < a[min_index]) {
+                    min_index = j;
+                }
+            }
+            int temp = a[i];
+            a[i] = a[min_index];
+            a[min_index] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int a[] = { 23, 56, 8, 2, 89, 1 };
+        selection(a);
+        print(a);
+    }
+}
+
+1 56 8 2 89 23 
+1 2 8 56 89 23 
+1 2 8 56 89 23 
+1 2 8 23 89 56 
+1 2 8 23 56 89 
+1 2 8 23 56 89
+----------------------------------------------------------------------------
+//2)5 9 11 67 22 98 7 13 
+public class Ab {
+    static void print(int a[]) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    static void selectionsort(int a[]) {
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
+            int min_index = i;
+            for (int j = i + 1; j < n; j++) {
+                if (a[j] < a[min_index]) {
+                    min_index = j;
+                }
+            }
+            int temp = a[i];
+            a[i] = a[min_index];
+            a[min_index] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        int a[] = { 5, 9, 11, 67, 22, 98, 7, 13 };
+     selectionsort(a);
+     print(a);
+    }
+}
+
+
+
+5 9 11 67 22 98 7 13 
+5 7 11 67 22 98 9 13
+5 7 9 67 22 98 11 13
+5 7 9 11 22 98 67 13
+5 7 9 11 13 98 67 22
+5 7 9 11 13 22 67 98
+5 7 9 11 13 22 67 98
+5 7 9 11 13 22 67 98
+---------------------------------------------------------------------------------------------------
