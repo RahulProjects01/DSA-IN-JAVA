@@ -1,0 +1,170 @@
+// 4)Write a Java function alternatingSum that takes an integer
+//  n as input and calculates the sum of natural numbers up to n with alternating signs. For example, if n is 5, the function 
+// should return 3, as the sum is 1 - 2 + 3 - 4 + 5 = 3.through recurssion
+
+public class Main {
+    static int alternate(int n) {
+        if (n == 0) {
+            return 0;
+        }
+        if (n % 2 == 0) {
+            return alternate(n - 1) + n;
+        } else {
+            return alternate(n - 1) - n;
+        }
+    }
+
+    public static void main(String[] args) {
+        int n = 5;
+        System.out.println(alternate(n));
+    }
+}
+
+----------------------------------------------------------------------------
+// 3)Want to print nth term of fibonacci series
+
+// test case1: 5
+
+// test case2: 10
+
+import java.util.*;
+
+public class Main {
+    static int fibo(int n) {
+        if (n == 0 || n == 1) {
+            return n;
+        }
+        int previous = fibo(n - 1);
+        int p = fibo(n - 2);
+        return previous + p;
+    }
+
+    static int fibo2(int m) {
+        if (m == 0 || m == 1) {
+            return m;
+        }
+        int previous2 = fibo2(m - 1);
+        int p = fibo2(m - 2);
+        return previous2 + p;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a num:");
+        int n = sc.nextInt();
+        System.out.println("enter b num: ");
+        int m = sc.nextInt();
+        for(int i=0;i<=n;i++){
+          System.out.print(fibo(i) + " ");
+        }
+        
+        System.out.println();
+        for(int i=0;i<=m;i++){
+          System.out.print(fibo2(i) + " ");
+        }
+
+    }
+}
+----------------------------------------------------------------------
+// 2)write a insertion sort algorithm in java ?
+
+public class Main{
+    static void insertion(int a[]){
+        for(int i=0;i<a.length;i++){
+            int j=i;
+            while (j>0 && a[j] < a[j-1]) {
+                int temp = a[j];
+                a[j] = a[j-1];
+                a[j-1] = temp;
+                j--;
+            }
+        }
+    }
+    public static void main(String[] args) {
+        int a[] = {2,6,7,5,9,8,3,4};
+        insertion(a);
+
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
+-------------------------------------------------------------------------
+
+// 5)String vowel is present or not ?
+// how many vowel present (counting)
+// which is consonant and vowel 
+
+// regex is my learning platform :present
+
+public class Main {
+    public static void main(String[] args) {
+        String a = "regex is my learning platform :present";
+          int count = 0;
+        for(int i=0;i<=a.length()-1;i++){
+            if(a.charAt(i) == 'i'|| a.charAt(i) == 'e'||a.charAt(i) == 'a'||a.charAt(i) == 'o'||a.charAt(i) == 'u'){
+            System.out.println("present");
+            count++;
+           
+            }
+            else{
+                System.out.println("not");
+               
+            }
+        }
+        System.out.println("vowel present: "+count);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------
+
+
+// 9)
+// Calculate the sum of each column in a 2D array.
+
+// {1, 2, 3},=12
+// {4, 5, 6},=15
+//  {7, 8, 9}=18
+
+public class Main{
+    static void max(int a[][]) {
+       
+        for (int i = 0; i < a.length; i++) {
+             int sum = 0;
+            for (int j = 0; j < a[i].length; j++) {
+                sum += a[j][i];
+            }
+            System.out.println("sum of column is : " + sum);
+        }
+        
+    }
+    public static void main(String[] args) {
+        int a[][] = {{1,2,3},{4,5,6},{7,8,9}};
+        max(a);
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<a[i].length;j++){
+                System.out.print(a[i][j]+' ');
+            }
+        }
+    }
+}
+----------------------------------------------------------------------------------------
+
+8)
+A perfect number is a positive integer that is equal to the sum of its proper divisors, excluding
+ itself. For example, 28 is a perfect number because its divisors
+ are 1, 2, 4, 7, and 14, and their sum is 28. Write a Java function to determine whether a given integer n is a perfect number.
+
+
+public class Main{
+public static void main(String[] args) {
+    int a = 6;
+    int r = a/2;
+    if(r==a){
+        System.out.println("perfact");
+    }
+    else{
+        System.out.println("not");
+    }
+}
+}
