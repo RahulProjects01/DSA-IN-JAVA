@@ -1,85 +1,3 @@
-// Q.1 ===>
-
-// import java.util.*;
-
-// public class test {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         String str = sc.next();
-//         int n = sc.nextInt();
-//         String arr[] = { "mon", "tue", "thu", "fri", "sat", "sun" };
-//         int i = 0;
-//         for (i = 0; i < arr.length; i++) {
-//             if (arr[i].equals(str))
-//                 break;
-//             int res = 1;
-//             int rem = 6 - i;
-//             n = n - rem;
-//             if (n > 0)
-//                 res += n / 7;
-//             System.out.println(res);
-//         }
-//     }
-// }
-
-//  ==================
-// Q.2--->
-
-// import java.util.*;
-
-// public class test {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         String str = sc.next();
-//         int l = sc.nextInt();
-//         int max = 0, count = 0;
-
-//         for (int i = 0; i < str.length(); i++) {
-//             if (i % l == 0) {
-//                 max = Math.max(count, max);
-//                 count = 0;
-
-//                 if (str.charAt(i) == 'a') {
-//                     count++;
-//                 }
-//                 max = Math.max(count, max);
-//                 System.out.println(max);
-//             }
-//         }
-//     }
-// }
-// ----------------->
-// Q.3
-
-// import java.util.*;
-
-// public class test {
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         String s = sc.next();
-//         int count = 0;
-//         int count2 = 0;
-//         for (int i = 0; i < s.length(); i++) {
-//             if (s.charAt(i) == '*') {
-//                 count++;
-//             }
-//             if (s.charAt(i) == '#') {
-//                 count2++;
-//             }
-//         }
-
-//         if (count == count2) {
-//             System.out.println("number of * and # are equal");
-//         }
-//         if (count > count2) {
-//             System.out.println("positive integer: "+count);
-//         }
-//         if (count < count2) {
-//             System.out.println("nagative integer");
-//         }
-//     }
-
-// }
 
 // Q.4==================>
 
@@ -285,44 +203,37 @@
 // 	}
 // }
 // =========================================================================
-// Java Program to Convert Integer Values into Binary
 
-// Importing CLasses/Files
-import java.io.*;
+import java.util.*;
 
 public class test {
-	// Function to print binary number
-	static void printBinary(int[] binary, int id)
-	{
-		// Iteration over array
-		for (int i = id - 1; i >= 0; i--)
-			System.out.print(binary[i] + "");
-	}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        String n = "";
+        for (int i = 1; i <= s.length(); i++) {
+            if (i == 1) {
+                if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o'
+                        || s.charAt(i) == 'u') {
+                    n += "%";
+                } else {
+                    n += s.charAt(i);
+                }
+            }
+            if (i == 2) {
+                if (s.charAt(i) != 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o'
+                        || s.charAt(i) == 'u') {
+                    n += "#";
+                } else {
+                    n += s.charAt(i);
+                }
+            }
+            if (i == 3) {
+                n = n.toUpperCase();
+            }
 
-	// Function converting decimal to binary
-	public static void decimalToBinary(int num)
-	{
-		// Creating and assigning binary array size
-		int[] binary = new int[35];
-		int id = 0;
+            System.out.println(n);
+        }
 
-		// Number should be positive
-		while (num > 0) {
-			binary[id++] = num % 2;
-			num = num / 2;
-		}
-
-		// Print Binary
-		printBinary(binary, id);
-	}
-
-	// Main Driver Code
-	public static void main(String[] args)
-	{
-		// Entered number to be convert into binary
-		int num = 5;
-
-		// Calling Our Above Function
-		decimalToBinary(num);
-	}
+    }
 }
