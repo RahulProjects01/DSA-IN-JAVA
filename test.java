@@ -1,211 +1,327 @@
-
-// //  Q.3 ----->
-// import java.util.*;
-
-// public class test {
-
-//     public static void main(String[] args) {
-
-//         Scanner sc = new Scanner(System.in);
-//         System.out.println("Enter a: ");
-//         int a = sc.nextInt();
-//         int index =0;
-//        int arr[] = new int[a];
-//        for(int i=0;i<a;i++){
-//         arr[i] = sc.nextInt();
-//        }
-
-//         int max = 0;
-//         if (a < 0) {
-//             return;
-//         }
-
-//         else {
-//             for (int i = 0; i < arr.length; i++) {
-//                 if(arr[i] > max){
-//                     max = arr[i];
-//                    index = i;
-
-//                 }
-//             }
-//             System.out.println(max);
-//             System.out.println(index);
-//         }
-//     }
-
-// }
-// ========================================================
-
-// //  Q.5 --->
-// import java.util.*;
-
-// public class test {
-//     public static void main(String[] args) {
-//         int a[] = { 10, 20, 20, 10, 10, 30, 50, 10, 20 };
-//         int count = 0;
-//         Arrays.sort(a);
-//         for (int i = 0; i < a.length - 1; i++) {
-//             if (a[i] == a[i + 1]) {
-//                 a[i] = -1;
-//                 count++;
-//                 i++;
-//             }
-//         }
-//         System.out.println(count);
-//     }
-// }
-// ==========================================================
-// // Q.6------------------->
+// Q.1 ===>
 // import java.util.*;
 
 // public class test {
 //     public static void main(String[] args) {
 //         Scanner sc = new Scanner(System.in);
-//         System.out.println("Enter the no of students placed in CSE: ");
-//         int c = sc.nextInt();
-//         System.out.println("Enter the no of students placed in ECE: ");
-//         int e = sc.nextInt();
-//         System.out.println("Enter the no of students placed in MECH: ");
-//         int m = sc.nextInt();
-
-//         if (c < 0 || e < 0 || m < 0) {
-//             System.out.println("Error");
-//         } else {
-//             if (c > e || c > m) {
-//                 System.out.println("Highest placement: CSE");
-//             } else if (e > c || e > m) {
-//                 System.out.println("Highest placement: ECE");
-//             } else {
-//                 System.out.println("Highest placement: MECH");
-//             }
-//         }
-//     }
-// }
-
-// =========================================================================
-
-//     // Q.7------------------->
-//     import java.util.*;
-
-//     public class test {
-//         public static void main(String[] args) {
-//             Scanner sc = new Scanner(System.in);
-//             System.out.println("Enter the no of liters to fill the tank: ");
-//             int tank = sc.nextInt();
-//             System.out.println("Enter the distance covered: ");
-//             int distance = sc.nextInt();
-
-//             if (distance < 0) {
-//                 System.out.println("invalid input");
-//             }
-
-//             float km = (distance / tank )* 100;
-//             float miles = distance * 0.6214f;
-//             float gallon = tank * 0.2662f;
-//             float gall = miles / gallon;
-
-//             System.out.println("Liters/100KM " + km);
-//             System.out.println("Miles/gallons: " + gall);
-
-//         }
-//     }
-// ==========================================================================
-// // Q.8--->
-
-// import java.util.*;
-
-// public class test {
-//     static void print(int arr[]) {
-//         for (int i = 0; i < arr.length; i++) {
-//             System.out.print(arr[i] + " ");
-//         }
-//     }
-
-//     static void swap(int arr[]) {
-//         for (int i = 0; i < arr.length; i++) {
-//             for (int j = 0; j < arr.length; j++) {
-//                 if (arr[i] != 0) {
-//                     int temp = arr[i];
-//                     arr[i] = arr[j];
-//                     arr[j] = temp;
-//                 }
-//             }
-
-//         }
-//     }
-
-//     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         System.out.println("Enter num:");
+//         String str = sc.next();
 //         int n = sc.nextInt();
-//         int arr[] = new int[n];
+//         String arr[] = { "mon", "tue", "thu", "fri", "sat", "sun" };
+//         int i = 0;
+//         for (i = 0; i < arr.length; i++) {
+//             if (arr[i].equals(str))
+//                 break;
+//             int res = 1;
+//             int rem = 6 - i;
+//             n = n - rem;
+//             if (n > 0)
+//                 res += n / 7;
+//             System.out.println(res);
+//         }
+//     }
+// }
 
+//  ==================
+// Q.2--->
+
+// import java.util.*;
+
+// public class test {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         String str = sc.next();
+//         int l = sc.nextInt();
+//         int max = 0, count = 0;
+
+//         for (int i = 0; i < str.length(); i++) {
+//             if (i % l == 0) {
+//                 max = Math.max(count, max);
+//                 count = 0;
+
+//                 if (str.charAt(i) == 'a') {
+//                     count++;
+//                 }
+//                 max = Math.max(count, max);
+//                 System.out.println(max);
+//             }
+//         }
+//     }
+// }
+// ----------------->
+// Q.3
+
+// import java.util.*;
+
+// public class test {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         String s = sc.next();
+//         int count = 0;
+//         int count2 = 0;
+//         for (int i = 0; i < s.length(); i++) {
+//             if (s.charAt(i) == '*') {
+//                 count++;
+//             }
+//             if (s.charAt(i) == '#') {
+//                 count2++;
+//             }
+//         }
+
+//         if (count == count2) {
+//             System.out.println("number of * and # are equal");
+//         }
+//         if (count > count2) {
+//             System.out.println("positive integer: "+count);
+//         }
+//         if (count < count2) {
+//             System.out.println("nagative integer");
+//         }
+//     }
+
+// }
+
+// Q.4==================>
+
+// import java.util.*;
+
+// public class test {
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         String s = sc.next();
+//         String n = "";
+//         for (int i = 1; i <= s.length(); i++) {
+//             if (i == 1) {
+//                 if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o'
+//                         || s.charAt(i) == 'u') {
+//                     n += "%";
+//                 } else {
+//                     n += s.charAt(i);
+//                 }
+//             }
+//             if (i == 2) {
+//                 if (s.charAt(i) != 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o'
+//                         || s.charAt(i) == 'u') {
+//                     n += "#";
+//                 } else {
+//                     n += s.charAt(i);
+//                 }
+//             }
+//             if(i==3){
+//                 n=n.toUpperCase();
+//             }
+
+//           System.out.println(n);
+//         }
+
+//     }
+// }
+
+// // Q.1-----------========>
+
+// import java.util.*;
+
+// public class test {
+//     public int[] productExceptSelf(int[] nums) {
+//         int n = nums.length;
+//         int[] result = new int[n];
+//         int leftProduct = 1;
 //         for (int i = 0; i < n; i++) {
-//             arr[i] = sc.nextInt();
+//             result[i] = leftProduct;
+//             leftProduct *= nums[i];
 //         }
+//         int rightProduct = 1;
+//         for (int i = n - 1; i >= 0; i--) {
+//             result[i] *= rightProduct;
+//             rightProduct *= nums[i];
+//         }
+//         return result;
+//     }
 
-//         swap(arr);
-//         print(arr);
+//     public static void main(String[] args) {
+//         // call
+//         Main solution = new Main();
+//         int[] nums = { 1, 2, 3, 4 };
+//         int[] result = solution.productExceptSelf(nums);
+//         System.out.println(Arrays.toString(result));
 //     }
 // }
-// ===================================================================================
 
-// // Q.9---->\
+// 
+// practice ==
+
+// public class test {
+//     public static void main(String[] args) {
+//         int a[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+
+//         for (int i = 0; i < a.length; i++) {
+//             for (int j = 0; j < a[i].length; j++) {
+//                 if (a[i][j] % 2 == 0 || a[i][j] == 5) {
+//                     a[i][j] = 0;
+//                     System.out.print(a[i][j] + " ");
+//                 } else {
+//                     System.out.print(a[i][j] + " ");
+//                 }
+
+//             }
+//             System.out.println();
+//         }
+//     }
+// }
+// ==============================================
+
 // import java.util.*;
 
 // public class test {
 //     public static void main(String[] args) {
 //         Scanner sc = new Scanner(System.in);
-//         System.out.println("Value of V: ");
-//         int v = sc.nextInt();
-//         System.out.println("Value of W: ");
-//         int w = sc.nextInt();
+//         System.out.println("Enter a number: ");
+//         int a = sc.nextInt();
+//         System.out.println("Enter b number: ");
+//         int b = sc.nextInt();
+//         int num = 0;
+//         int rem = 0;
 
-//         int total = w / 2;
-//         int total2 = total - v;
-//         int total3 = v - total2;
+//         int temp;
+//         for (int i = a; i <= b; i++) {
+//             num = i;
+//             temp = num;
+//             int sum = 0;
+//             while (num > 0) {
+//                 rem = num % 10;
+//                 sum = sum * 10
+//                         + rem;
+//                 num = num / 10;
 
-//         System.out.println("TW: " + total3);
-//         System.out.println("FM: " + total2);
+//             }
+
+//             if (temp == sum) {
+//                 System.out.println("p: " + sum);
+//             }
+//         }
 //     }
 // }
-// ================================================================================
-// Q.4 ------------> 
 
-
+// ==========================================>
 
 // import java.util.*;
 
 // public class test {
+// public static void main(String[] args) {
+// Scanner sc = new Scanner(System.in);
+// System.out.println("Enter number: ");
+// int n = sc.nextInt();
+// int arr[] = new int[n];
+// int max = 0;
+// int min = 0;
+// for (int i = 0; i < n; i++) {
+// arr[i] = sc.nextInt();
+// }
+
+// for (int i = 0; i < arr.length; i++) {
+// if (arr[i] > max) {
+// max = arr[i];
+// }
+// if (arr[i] < min) {
+// min = arr[i];
+// }
+// }
+// int diff = max - min;
+// System.out.println(diff);
+// }
+// }
+
+// =====================================
+// 1)
+// Rotate Array
+// Rotate an array to the right by k steps, where k is non-negative.
+// Input: [1, 2, 3, 4, 5, 6, 7], k = 3
+// Output: [5, 6, 7, 1, 2, 3, 4]
+
+// public class test {
 //     public static void main(String[] args) {
-//         Scanner sc = new Scanner(System.in);
-//         System.out.println("Enter the number of tictet: ");
-//         int ticket = sc.nextInt();
-//         System.out.println("Do you want refreshment: ");
-//         String refe = sc.next();
-//         System.out.println("Do you have coupon code: ");
-//         String coupon = sc.next();
-//         System.out.println("Enter the circle: ");
-//         String circle = sc.next();
-//         double total = 0.0;
+//         int k = 3;
+//         int a[] = { 1, 2, 3, 4, 5, 6, 7 };
 
-//         if (ticket > 5 || ticket <= 40) {
-//             if (ticket >= 20 || circle.equals("k")) {
-//                 ticket = ticket * 75;
-//                 total = ticket - (0.1*ticket);
-//                 System.out.println("total cost: " + total);
+//         while (k > 0) {
+
+//             for (int i = a.length - 1; i > 0; i--) {
+//                 int temp = a[i];
+//                 a[i] = a[i - 1];
+//                 a[i - 1] = temp;
 //             }
-//             else if (circle.equals("q") || ticket >= 20){
-//                 ticket = ticket * 150;
-//                 total = ticket - (0.1*ticket);
-//                 System.out.println("total cost: " + total);
+//             k--;
+//             for (int i = 0; i < a.length; i++) {
+//                 System.out.print(a[i] + " ");
 //             }
-//             else if(coupon.equals("y") ){
-//                 total = ticket - (0.01*ticket);
-//                 System.out.println("total cost: " + total);
-//             }
-           
+//             System.out.println();
 //         }
-
 //     }
 // }
+
+// ======================================================================
+// Java Program to Convert Integer Values into Binary
+
+// // Importing Classes/Files
+// import java.io.*;
+
+// class test {
+// 	// Function converting decimal to binary
+// 	static void decimalToBinary(int num)
+// 	{
+// 		// Function to print integer to binary using
+// 		// inbuilt toBinaryString method
+// 		System.out.println(Integer.toBinaryString(num));
+// 	}
+
+// 	// Main driver function
+// 	public static void main(String[] args)
+// 	{
+// 		// Number to be converted into binary
+// 		int num = 5;
+
+// 		// Calling function
+// 		decimalToBinary(num);
+// 	}
+// }
+// =========================================================================
+// Java Program to Convert Integer Values into Binary
+
+// Importing CLasses/Files
+import java.io.*;
+
+public class test {
+	// Function to print binary number
+	static void printBinary(int[] binary, int id)
+	{
+		// Iteration over array
+		for (int i = id - 1; i >= 0; i--)
+			System.out.print(binary[i] + "");
+	}
+
+	// Function converting decimal to binary
+	public static void decimalToBinary(int num)
+	{
+		// Creating and assigning binary array size
+		int[] binary = new int[35];
+		int id = 0;
+
+		// Number should be positive
+		while (num > 0) {
+			binary[id++] = num % 2;
+			num = num / 2;
+		}
+
+		// Print Binary
+		printBinary(binary, id);
+	}
+
+	// Main Driver Code
+	public static void main(String[] args)
+	{
+		// Entered number to be convert into binary
+		int num = 5;
+
+		// Calling Our Above Function
+		decimalToBinary(num);
+	}
+}
