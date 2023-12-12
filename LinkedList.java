@@ -1,3 +1,7 @@
+// delete minddle node --------->
+
+
+
 class ListNode {
     int val;
     ListNode next;

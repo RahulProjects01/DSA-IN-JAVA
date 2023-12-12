@@ -5,7 +5,7 @@ public class LinkedList_03 {
   Node head;
   private int size;
 
-  LinkedList_03() {
+  LinkedList_03() { 
     this.size = 0;
   }
 
@@ -115,7 +115,6 @@ public class LinkedList_03 {
 
     System.out.println("-------------------------------");
 
-   System.out.println( list.getSize());
+    System.out.println(list.getSize());
   }
 }
-
