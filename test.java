@@ -1,60 +1,123 @@
-class ListNode {
-    int val;
-    ListNode next;
+// // impost java.util.*;
+// public class test {
+//     public static class Node {
+//         int data;
+//         Node next;
 
-    ListNode(int val) {
-        this.val = val;
-    }
-}
+//         Node(int data) {
+//             this.data = data;
+//         }
+//     }
 
-class A {
-    public ListNode deleteMListNode(ListNode head) {
-        if (head == null || head.next == null) {
-            return null;
-        }
-        ListNode slow = head;
-        ListNode fast = head;
-        ListNode prev = null;
+//     public static class linkedlist {
+//         Node head = null;
+//         Node tail = null;
 
-        while (fast != null && fast.next != null) {
-            prev = slow;
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-        if (prev != null) {
-            prev.next = slow.next;
-        }
-        else {
-            head = head.next;
-        }
-        return head;
-    }
-}
+//         void insertAtEnd(int val) {
+//             Node temp = new Node(val);
+//             if (head == null) {
+//                 head = temp;
+//             } else {
+//                 tail.next = temp;
+//             }
+//             tail = temp;
+//         }
 
+//         void display() {
+//             Node temp = head;
+//             while (temp != null) {
+//                 System.out.print(temp.data + " ");
+//                 temp = temp.next;
+//             }
+//         }
+//     }
+
+//     public static void main(String[] args) {
+//         linkedlist ll = new linkedlist();
+//         ll.insertAtEnd(4);
+//         ll.insertAtEnd(5);
+//         ll.insertAtEnd(23);
+//         ll.display();
+//     }
+// }
+import java.util.*;
 public class test {
-    public static void printList(ListNode head) {
-        ListNode current = head;
-        while (current != null) {
-            System.out.print(current.val + " ");
-            current = current.next;
+    public static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
         }
-        System.out.println();
+    }
+
+    public static class LinkedList {
+        Node head = null;
+        Node tail = null;
+
+        void insertAtEnd(int val) {
+            Node temp = new Node(val);
+
+            if (head == null) {
+                head = temp;
+            } else {
+                tail.next = temp;
+            }
+            tail = temp;
+        }
+
+        void insertAtStart(int val) {
+            Node temp = new Node(val);
+
+            if (head == null) {
+                insertAtEnd(val);
+            } else {
+                temp.next = head;
+                head = temp;
+            }
+        }
+
+        void insertAt(int idx, int val) {
+            Node t = new Node(val);
+            Node temp = head;
+
+            if (idx == size()) {
+                insertAtEnd(val);
+                return;
+            }
+
+            if (idx == 0) {
+                insertAtStart(val);
+                return;
+            }
+
+            else if (idx < 0) {
+                System.out.println("Wrong index");
+                return;
+            }
+            for (int i = 1; i <= idx - 1; i++) {
+                temp = temp.next;
+            }
+            t.next = temp.next;
+            temp.next = t;
+        }
+
+        void display() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        }
     }
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(12);
-        head.next = new ListNode(67);
-        head.next = new ListNode(12);
-        head.next = new ListNode(78);
-        head.next = new ListNode(8);
-
-        System.out.println("orignal");
-        printList(head);
-
-        A k = new A();
-        k.deleteMListNode(head);
-        System.out.println("delete");
-        printList(head);
-
+        LinkedList ll = new LinkedList();
+        ll.insertAtEnd(23);
+        ll.insertAtEnd(32);
+        ll.insertAtEnd(34);
+        ll.insertAtStart(222);
+        ll.insertAt(0, 777);
+        ll.display();
     }
 }
