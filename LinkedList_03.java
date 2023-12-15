@@ -26,7 +26,6 @@ public class LinkedList_03 {
       head = newNode;
       return;
     }
-
     newNode.next = head;
     head = newNode;
   }

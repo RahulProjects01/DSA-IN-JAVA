@@ -40,7 +40,7 @@
 //         ll.display();
 //     }
 // }
-import java.util.*;
+
 public class test {
     public static class Node {
         int data;
@@ -54,7 +54,7 @@ public class test {
     public static class LinkedList {
         Node head = null;
         Node tail = null;
-
+        Node size = 0;
         void insertAtEnd(int val) {
             Node temp = new Node(val);
 
@@ -64,6 +64,7 @@ public class test {
                 tail.next = temp;
             }
             tail = temp;
+            size++;
         }
 
         void insertAtStart(int val) {
@@ -75,13 +76,14 @@ public class test {
                 temp.next = head;
                 head = temp;
             }
+            size++;
         }
 
         void insertAt(int idx, int val) {
             Node t = new Node(val);
             Node temp = head;
 
-            if (idx == size()) {
+            if (idx == size) {
                 insertAtEnd(val);
                 return;
             }
@@ -91,15 +93,31 @@ public class test {
                 return;
             }
 
-            else if (idx < 0) {
+            else if (idx < 0 || idx > size) {
                 System.out.println("Wrong index");
                 return;
             }
+
             for (int i = 1; i <= idx - 1; i++) {
                 temp = temp.next;
             }
             t.next = temp.next;
             temp.next = t;
+            size++;
+        }
+
+        // get value function
+        int getAt(int idx) {
+              if (idx < 0 || idx > size) {
+                System.out.println("Wrong index");
+                return -1;
+            }
+            
+            Node temp = head;
+            for (int i = 1; i < idx; i++) {
+                temp = temp.next;
+            }
+            return temp.data;
         }
 
         void display() {
@@ -108,7 +126,19 @@ public class test {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
             }
+            System.out.println();
         }
+
+        // int size() {
+        //     Node temp = head;
+        //     int count = 0;
+
+        //     while (temp != null) {
+        //         count++;
+        //         temp = temp.next;
+        //     }
+        //     return count;
+        // }
     }
 
     public static void main(String[] args) {
@@ -119,5 +149,9 @@ public class test {
         ll.insertAtStart(222);
         ll.insertAt(0, 777);
         ll.display();
+
+        System.out.println(ll.getAt(0));
+        System.out.println(ll.size);
+        // System.out.println("size if linkedList: "+ll.size());
     }
 }

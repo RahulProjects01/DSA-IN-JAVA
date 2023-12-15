@@ -212,7 +212,7 @@
 //         int a[] = { 2, 3, 5, 7, 11, 13 };
 //      int flag=0 ;
 //         for(int i=0;i<a.length;i++){
-            
+
 //             for(int j=0;j<a.length;j++){
 //                 if(i%j==0){
 //                     flag = 1;
@@ -223,10 +223,9 @@
 //             System.out.print(a[i]+" ");
 //         }
 //         }
-        
+
 //     }
 // }
-
 
 // public class test{
 //     static void printBinary(int binary[],int id){
@@ -252,3 +251,82 @@
 //     decimalToBinary(num);
 // }
 // }
+
+// import java.util.LinkedList;
+
+// import org.w3c.dom.Node;
+
+public class Main {
+    public static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    public static class LinkedList {
+        Node head = null;
+        Node tail = null;
+        int size = 0;
+
+        void insertAtEnd(int val) {
+            Node temp = new Node(val);
+            if (head == null) {
+                head = temp;
+            } else {
+                tail.next = temp;
+            }
+            tail = temp;
+            size++;
+        }
+
+        void addFirst(int val) {
+            Node temp = new Node(val);
+            if (head == null) {
+                head = temp;
+                return;
+            }
+            temp.next = head;
+            head = temp;
+            size++;
+        }
+
+        void deleteFirst(int idx) {
+            Node temp = head;
+            for (int i = 1; i <= idx - 1; i++) {
+                temp = temp.next;
+            }
+            temp.next = temp.next.next;
+            tail = temp;
+            size--;
+        }
+
+        void dispaly() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.insertAtEnd(33);
+        ll.insertAtEnd(44);
+        ll.insertAtEnd(55);
+        ll.insertAtEnd(66);
+        ll.insertAtEnd(77);
+
+        ll.addFirst(122);
+        
+        ll.deleteFirst(5);
+        ll.dispaly();
+
+        System.out.println();
+        System.out.println("size of LinkedList: " + ll.size);
+
+    }
+}
