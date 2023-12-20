@@ -40,6 +40,7 @@
 //         ll.display();
 //     }
 // }
+// =============================================================================
 
 public class test {
     public static class Node {
@@ -55,6 +56,7 @@ public class test {
         Node head = null;
         Node tail = null;
         Node size = 0;
+
         void insertAtEnd(int val) {
             Node temp = new Node(val);
 
@@ -108,11 +110,11 @@ public class test {
 
         // get value function
         int getAt(int idx) {
-              if (idx < 0 || idx > size) {
+            if (idx < 0 || idx > size) {
                 System.out.println("Wrong index");
                 return -1;
             }
-            
+
             Node temp = head;
             for (int i = 1; i < idx; i++) {
                 temp = temp.next;
