@@ -3,16 +3,16 @@ import java.util.Map;
 import java.util.Scanner;
 
 class Bank {
-    private Map<String, Account> accounts;
+    private Map<String, Account> hm;
 
     public Bank() {
-        this.accounts = new HashMap<>();
+        this.hm = new HashMap<>();
     }
 
     public void createAccount(String accountNumber, String accountHolder, double initialBalance) {
-        if (!accounts.containsKey(accountNumber)) {
-            Account account = new Account(accountNumber, accountHolder, initialBalance);
-            accounts.put(accountNumber, account);
+        if (!hm.containsKey(accountNumber)) {
+            Account ac = new Account(accountNumber, accountHolder, initialBalance);
+            hm.put(accountNumber, ac);
             System.out.println("Account created successfully!");
         } else {
             System.out.println("Account already exists with the given account number.");
@@ -20,8 +20,8 @@ class Bank {
     }
 
     public void displayAccountDetails(String accountNumber) {
-        if (accounts.containsKey(accountNumber)) {
-            Account account = accounts.get(accountNumber);
+        if (hm.containsKey(accountNumber)) {
+            Account account = hm.get(accountNumber);
             System.out.println("Account Number: " + account.getAccountNumber());
             System.out.println("Account Holder: " + account.getAccountHolder());
             System.out.println("Balance: $" + account.getBalance());
@@ -31,8 +31,8 @@ class Bank {
     }
 
     public void performTransaction(String accountNumber, double amount, String transactionType) {
-        if (accounts.containsKey(accountNumber)) {
-            Account account = accounts.get(accountNumber);
+        if (hm.containsKey(accountNumber)) {
+            Account account = hm.get(accountNumber);
             if (transactionType.equalsIgnoreCase("deposit")) {
                 account.deposit(amount);
             } else if (transactionType.equalsIgnoreCase("withdraw")) {
@@ -97,10 +97,10 @@ public class BankingManagementSystem {
             System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine(); // consume the newline character
+            int c = scanner.nextInt();
+                     scanner.nextLine();  
 
-            switch (choice) {
+            switch (c) {
                 case 1:
                     System.out.print("Enter Account Number: ");
                     String accNumber = scanner.nextLine();

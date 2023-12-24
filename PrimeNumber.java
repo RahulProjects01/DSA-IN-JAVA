@@ -1,4 +1,4 @@
-public class Main {
+public class PrimeNumber {
     public static boolean prime(int n) {
         if (n == 0 || n == 1) {
             return false;

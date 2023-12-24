@@ -24,7 +24,7 @@ class Cafe {
     public void displayMenu() {
         System.out.println("\nMenu:");
         for (Map.Entry<String, Double> item : menu.entrySet()) {
-            System.out.println(item.getKey() + " - ₹" + item.getValue());
+            System.out.println(item.getKey() + " - $" + item.getValue());
         }
     }
 
@@ -72,7 +72,7 @@ class Order {
 
     @Override
     public String toString() {
-        return itemName + " x" + quantity + " - ₹" + getTotalPrice();
+        return itemName + " x" + quantity + " - $" + getTotalPrice();
     }
 }
 
@@ -111,7 +111,7 @@ public class CafeManagementSystem {
                     break;
 
                 case 4:
-                    System.out.println("Total Revenue: ₹" + cafe.calculateTotalRevenue());
+                    System.out.println("Total Revenue: $" + cafe.calculateTotalRevenue());
                     break;
 
                 case 5:
