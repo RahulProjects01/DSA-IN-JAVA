@@ -42,7 +42,7 @@
 // }
 // =============================================================================
 
-public class test {
+public class test_04 {
     public static class Node {
         int data;
         Node next;
