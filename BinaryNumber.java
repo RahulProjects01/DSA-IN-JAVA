@@ -10,7 +10,7 @@ public class BinaryNumber {
         int id = 0;
 
         while (num > 0) {
-            binar[id++] = num % 2;
+            binary[id++] = num % 2;
             num = num / 2;
         }
         printBinary(binary, id);
