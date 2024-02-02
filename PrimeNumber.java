@@ -3,15 +3,17 @@ public class PrimeNumber {
         if (n == 0 || n == 1) {
             System.out.println("Not Prime");
         }
-        if (n == 2) {
+        else if (n == 2) {
             System.out.println("Prime");
         }
         for (int i = 2; i <= n / 2; i++) {
             if (n % i == 0) {
                 System.out.println("Not Prime");
+                break;
             }
             else {
-                 System.out.println("Prime");
+                System.out.println("Prime");
+                break;
             }
         }
     }
